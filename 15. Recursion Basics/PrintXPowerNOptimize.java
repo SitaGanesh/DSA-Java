@@ -1,0 +1,18 @@
+public class PrintXPowerNOptimize {
+    public static void main(String[] args) {
+        int x=2;
+        int n=10;
+        System.out.println(xPowerNOpti(x, n));
+    }
+    public static int xPowerNOpti(int x,int n){
+        if(n==0){
+            return 1;
+        }
+        int halfPower=xPowerNOpti(x, n/2);
+        int halfPowerSq=halfPower*halfPower;
+        if(n%2 != 0){
+            halfPowerSq=x*halfPowerSq;
+        }
+        return halfPowerSq;
+    }
+}
